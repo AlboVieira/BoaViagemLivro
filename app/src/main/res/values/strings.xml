@@ -10,6 +10,13 @@
     <string name="nova_viagem">Nova Viagem</string>
     <string name="configuracoes">Configurações</string>
     <string name="minhas_viagens">Minhas Viagens</string>
+    <string name="editar">Editar</string>
+    <string name="gastos_realizados">Gastos Realizados</string>
+    <string name="remover">Remover</string>
+    <string name="confirmacao_exclusao_viagem">Confirma a exclusao da viagem?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Nao</string>
+    <string name="opcoes">Opções</string>
     <string name="destino">Destino</string>
     <string name="tipo_da_viagem">Tipo da viagem</string>
     <string name="lazer">Lazer</string>
@@ -34,5 +41,8 @@
         <item>Hospedagem</item>
         <item>Outros</item>
     </string-array>
+
+    <string name="sair">Sair</string>
+    <string name="remover_viagem">Remover Viagem</string>
 
 </resources>

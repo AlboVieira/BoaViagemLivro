@@ -1,19 +1,22 @@
 package br.com.albovieira.boaviagem;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.SimpleAdapter;
 import android.widget.SimpleAdapter.ViewBinder;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GastoListActivity extends ListActivity implements
 		OnItemClickListener {
@@ -33,6 +36,31 @@ public class GastoListActivity extends ListActivity implements
 		
 		setListAdapter(adapter);
 		getListView().setOnItemClickListener(this);
+
+		// registramos aqui o novo menu de contexto
+		registerForContextMenu(getListView());
+	}
+
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+									ContextMenu.ContextMenuInfo menuInfo){
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.gasto_menu,menu);
+	}
+
+	//trata o item selecionado
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		if(item.getItemId() == R.id.remover){
+			AdapterView.AdapterContextMenuInfo info =
+					(AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+			this.gastos.remove(info.position);
+			getListView().invalidateViews();
+
+			//remover do banco
+			return true;
+		}
+		return super.onContextItemSelected(item);
 	}
 
 	@Override

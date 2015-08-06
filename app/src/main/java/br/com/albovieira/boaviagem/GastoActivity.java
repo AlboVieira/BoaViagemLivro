@@ -1,17 +1,20 @@
 package br.com.albovieira.boaviagem;
 
-import java.util.Calendar;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
+
+import java.util.Calendar;
 
 public class GastoActivity extends Activity {
 
@@ -19,6 +22,7 @@ public class GastoActivity extends Activity {
 	private Button dataGasto;
 	private Spinner categoria;
 
+	//cria datetimepicker atraves de modal e as categorias(spinner)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -59,4 +63,22 @@ public class GastoActivity extends Activity {
 			dataGasto.setText(dia + "/" + (mes + 1) + "/" + ano);
 		}
 	};
+
+	public void registrarGasto(){
+
+	}
+
+	//seta as opcoes de menu da dashboard
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.gasto_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureID, MenuItem item){
+		finish();
+		return true;
+	}
 }

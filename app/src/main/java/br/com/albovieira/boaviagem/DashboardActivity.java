@@ -3,6 +3,9 @@ package br.com.albovieira.boaviagem;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 public class DashboardActivity extends Activity {
@@ -13,6 +16,22 @@ public class DashboardActivity extends Activity {
 		setContentView(R.layout.dashboard);
 	}
 
+	//seta as opcoes de menu da dashboard
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.dashboard_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureID, MenuItem item){
+		//fecha a aplicacao
+		finish();
+		return true;
+	}
+
+	//selecao das opcoes do menu principal
 	public void selecionarOpcao(View view) {
 		switch (view.getId()) {
 			case R.id.nova_viagem:

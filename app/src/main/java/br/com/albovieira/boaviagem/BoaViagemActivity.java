@@ -20,7 +20,8 @@ public class BoaViagemActivity extends Activity {
         usuario = (EditText) findViewById(R.id.usuario);
         senha = (EditText) findViewById(R.id.senha);
     }
-    
+
+	//login temporario da aplicacao
     public void entrarOnClick(View v){
     	String usuarioInformado = usuario.getText().toString();
     	String senhaInformada = senha.getText().toString();

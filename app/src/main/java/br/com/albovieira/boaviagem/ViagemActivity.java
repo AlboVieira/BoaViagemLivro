@@ -1,16 +1,20 @@
 package br.com.albovieira.boaviagem;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class ViagemActivity extends Activity {
 
@@ -68,5 +72,27 @@ public class ViagemActivity extends Activity {
 		Calendar calendar = Calendar.getInstance();
 		calendar.set(anoSelecionado, mesSelecionado, diaSelecionado);
 		return calendar.getTime();
+	}
+
+	//seta as opcoes de menu da dashboard
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu){
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.viagem_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureID, MenuItem item){
+		switch (item.getItemId()){
+			case R.id.novo_gasto:
+				startActivity(new Intent(this,GastoActivity.class));
+				return true;
+			case R.id.remover:
+				//remover viagem do banco de dados
+				return true;
+			default:
+				return super.onMenuItemSelected(featureID, item);
+		}
 	}
 }
