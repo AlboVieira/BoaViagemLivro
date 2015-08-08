@@ -12,12 +12,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class ViagemActivity extends Activity {
 
+	private DatabaseHelper helper;
+	private EditText destino, quantidadePessoas, orcamento;
+	private RadioGroup radioGroup;
 	private Date dataChegada, dataSaida;
 	private int ano, mes, dia;
 	private Button dataChegadaButton, dataSaidaButton;
@@ -34,7 +39,13 @@ public class ViagemActivity extends Activity {
 		
 		dataChegadaButton = (Button) findViewById(R.id.dataChegada);
 		dataSaidaButton = (Button) findViewById(R.id.dataSaida);
-		
+
+		destino = (EditText) findViewById(R.id.destino);
+		quantidadePessoas = (EditText) findViewById(R.id.quantidadePessoas);
+		orcamento = (EditText) findViewById(R.id.orcamento);
+		radioGroup = (RadioGroup) findViewById(R.id.tipoViagem);
+
+		helper = new DatabaseHelper(this);
 	}
 
 	public void selecionarData(View view) {

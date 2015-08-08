@@ -44,7 +44,7 @@ public class BoaViagemActivity extends Activity {
 			SharedPreferences preferencias = getPreferences(MODE_PRIVATE);
 			SharedPreferences.Editor editor = preferencias.edit();
 			editor.putBoolean(MANTER_CONECTADO,this.manterConectado.isChecked());
-			editor.commit();
+			editor.apply();
 
     		startActivity(new Intent(this,DashboardActivity.class));
     	}
