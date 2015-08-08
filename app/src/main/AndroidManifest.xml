@@ -19,6 +19,7 @@
         <activity android:name=".GastoActivity" >
         </activity>
         <activity android:name=".ViagemListActivity" />
+        <activity android:name=".ConfiguracoesActivity" />
         <activity android:name=".GastoListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

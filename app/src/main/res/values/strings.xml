@@ -5,6 +5,7 @@
     <string name="usuario">Usuário</string>
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
+    <string name="manter_conectado">Manter Conectado</string>
     <string name="erro_autenticao">Usuário ou senha inválidos</string>
     <string name="novo_gasto">Novo Gasto</string>
     <string name="nova_viagem">Nova Viagem</string>
@@ -45,4 +46,10 @@
     <string name="sair">Sair</string>
     <string name="remover_viagem">Remover Viagem</string>
 
+    <string name="preferencias">Preferencias</string>
+    <string name="modo_viagem">Modo Viagem</string>
+    <string name="modo_viagem_sumario">Determina a viagem ativa com base na viagem atual</string>
+    <string name="informe_valor_limite">Informe Valor Limite (em %)</string>
+    <string name="valor_limite_sumario">Notifica quando os gastos ultrapassem o percentual informado</string>
+    <string name="valor_limite">Alerta de gastos</string>
 </resources>
